@@ -2,7 +2,7 @@ spring:
   application:
     name: krems
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}
+    active: ${SPRING_PROFILES_ACTIVE:local}
 
 management:
   endpoints:
