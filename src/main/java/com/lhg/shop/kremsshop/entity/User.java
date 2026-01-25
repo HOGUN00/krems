@@ -21,11 +21,21 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    // 소셜로그인 사용자는 password가 null일 수 있음
+    @Column(nullable = true)
     private String password;
 
     @Column(nullable = false)
     private String nickname;
+
+    @Column(nullable = false)
+    private String role;
+
+    @Column(nullable = true)
+    private String provider;
+
+    @Column(nullable = true, name = "provider_id")
+    private String providerId;
 
     public void update(UserUpdateRequest request) {
         if(request.email() != null) {
